@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json.schemastore.org/proxies",
+    "proxies": {
+        "Default": {
+            "matchCondition": {
+                "route": "{*path}",
+                "methods": [
+                    "GET",
+                    "POST"
+                ]
+            },
+            "backendUri": "https://func-prod-http-301-redirect.azurewebsites.net/api/redirect"
+        }
+    }
+}
