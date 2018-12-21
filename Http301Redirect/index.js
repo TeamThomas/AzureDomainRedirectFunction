@@ -11,7 +11,7 @@ module.exports = async function (context, req) {
             var redirectRules = JSON.parse(process.env["RedirectRules"]);
             var redirectRule = redirectRules[disguisedHost];
             if (redirectRule === undefined && disguisedHost.startsWith("www.")) {
-                redirectRule = redirectRules[disguisedHost.subst(4)];
+                redirectRule = redirectRules[disguisedHost.substring(4)];
             }
             if (redirectRule === undefined) {
                 context.log.info("Functions.Http301Redirect: No redirect rules found for " + disguisedHost + ".");
