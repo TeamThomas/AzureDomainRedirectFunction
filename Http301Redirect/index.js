@@ -16,11 +16,11 @@ module.exports = async function (context, req) {
             if (redirectRule === undefined) {
                 context.log.info("Functions.Http301Redirect: No redirect rules found for " + disguisedHost + ".");
             } else {
-                context.log.info("Functions.Http301Redirect: Redirecting " + disguisedHost + " to " + redirectRules[disguisedHost]);
+                context.log.info("Functions.Http301Redirect: Redirecting " + disguisedHost + " to " + redirectRule);
                 context.res = {
                     status: 301,
                     headers: {
-                        "Location": redirectRules[disguisedHost]
+                        "Location": redirectRule
                     }
                 };
             }
